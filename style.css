@@ -1,15 +1,13 @@
-/* Design "Profissional Alinhado" */
+/* Design Final: "Precisão Suíça" */
 :root {
-    --page-bg: #f4f7f9;                /* Fundo da página levemente acinzentado */
-    --card-bg: #ffffff;                 /* Fundo branco para o container principal */
-    --text-primary: #333d47;           /* Cor de texto principal, escura e suave */
-    --text-secondary: #6c757d;         /* Cor de texto para rótulos e secundários */
-    --accent-color: #4a90e2;            /* Um azul corporativo, profissional */
-    --accent-hover: #357ABD;            /* Azul mais escuro para hover */
-    --border-color: #dfe3e7;            /* Cor de borda sutil */
-    --result-bg-color: #eef5fc;         /* Fundo bem claro para a área de resultado */
-    --font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    --spacing-unit: 1rem;
+    --color-background: #FFFFFF;
+    --color-text-primary: #111111;
+    --color-text-secondary: #666666;
+    --color-accent: #111111; /* O próprio texto escuro será o destaque */
+    --color-accent-hover: #444444;
+    --color-border: #EAEAEA;
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-monospace: 'SF Mono', 'Consolas', 'Menlo', 'Courier New', monospace;
 }
 
 * {
@@ -19,154 +17,157 @@
 }
 
 body {
-    font-family: var(--font-family);
-    background-color: var(--page-bg);
-    color: var(--text-primary);
-    line-height: 1.5;
-    padding-bottom: 60px;
+    font-family: var(--font-sans-serif);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
-    background-color: var(--card-bg);
-    padding: var(--spacing-unit);
+    padding: 2rem;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
 }
 
 header h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .container {
-    width: 90%;
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: calc(var(--spacing-unit) * 2);
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-color);
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: calc(var(--spacing-unit) * 2);
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .info-note {
-    background-color: var(--result-bg-color);
-    color: var(--accent-hover);
-    padding: var(--spacing-unit);
-    margin-bottom: calc(var(--spacing-unit) * 1.5);
-    border-radius: 4px;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* --- O CORAÇÃO DO ALINHAMENTO --- */
 #nat-form {
     display: grid;
-    grid-template-columns: 1fr; /* Cada grupo de input ocupa uma linha */
-    gap: calc(var(--spacing-unit) * 1.5);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .input-group {
     display: grid;
-    grid-template-columns: 180px 1fr; /* Coluna 1 (label) e Coluna 2 (input) */
+    grid-template-columns: 200px 1fr;
     align-items: center;
-    gap: var(--spacing-unit);
+    gap: 1.5rem;
 }
 
 .input-group label {
+    font-size: 0.875rem;
     font-weight: 500;
+    color: var(--color-text-secondary);
     text-align: right;
-    color: var(--text-secondary);
 }
 
 .input-group input,
 .input-group select {
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    font-family: var(--font-monospace);
     font-size: 1rem;
-    width: 100%;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
 }
 
 .input-group input:focus, 
 .input-group select:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.05);
 }
 
 #calculate-btn {
-    grid-column: 1 / -1; /* Ocupa a largura total da grid do formulário */
-    padding: var(--spacing-unit);
-    background-color: var(--accent-color);
-    color: #fff;
+    font-family: var(--font-sans-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    justify-self: center; /* Centraliza o botão na grid */
+    width: 200px;
+    padding: 0.875rem;
+    background-color: var(--color-accent);
+    color: var(--color-background);
     border: none;
     border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: bold;
     cursor: pointer;
-    margin-top: var(--spacing-unit);
-    transition: background-color 0.2s ease;
+    margin-top: 2rem;
+    transition: all 0.2s ease-in-out;
 }
 
 #calculate-btn:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
 }
 
 #results-section {
-    margin-top: calc(var(--spacing-unit) * 2);
-    padding-top: calc(var(--spacing-unit) * 1.5);
-    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
     text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
 }
 
 #results-section h3 {
+    font-size: 0.875rem;
     font-weight: 500;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-unit);
-}
-
-.result-output {
-    background-color: var(--result-bg-color);
-    padding: var(--spacing-unit) 0;
-    border-radius: 4px;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .result-output p {
     font-size: 1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
 }
 
 #thrust-result {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-primary);
+    font-family: var(--font-monospace);
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1;
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: var(--page-bg);
-    color: var(--text-secondary);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.8rem;
+    padding: 3rem 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
 }
 
-/* Responsividade para telas menores */
+/* Layout responsivo para telas menores */
 @media (max-width: 600px) {
     .input-group {
-        grid-template-columns: 1fr; /* Empilha o label em cima do input */
+        grid-template-columns: 1fr;
         gap: 0.5rem;
     }
     .input-group label {
         text-align: left;
+    }
+    #thrust-result {
+        font-size: 3rem;
     }
 }
