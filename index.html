@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Performance - Fokker 28</title>
+    <title>Performance Calculator - Fokker 28</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Calculadora de Performance | Fokker 28</h1>
+        <h1>Performance Calculator | Fokker 28</h1>
     </header>
-    
+
     <main class="container">
         <div id="calculator-section">
             <h2>Noise Abatement Take-off</h2>
-            
+
             <div class="info-note">
-                <p><strong>NOTA:</strong> Nenhum procedimento de abatimento de ruído é requerido em caso de falha de motor.</p>
+                <p><strong>NOTE:</strong> No noise abatement is required in case of engine failure.</p>
             </div>
 
             <form id="nat-form">
                 <div class="input-group">
-                    <label for="flap-setting">Configuração de Flap:</label>
+                    <label for="flap-setting">Flap Setting:</label>
                     <select id="flap-setting" required>
                         <option value="6">6 deg</option>
                         <option value="11">11 deg</option>
                         <option value="18" selected>18 deg</option>
                     </select>
                 </div>
-                
+
                 <div class="input-group">
-                    <label for="aircraft-weight">Peso da Aeronave (kg):</label>
+                    <label for="aircraft-weight">Aircraft Weight (kg):</label>
                     <input type="number" id="aircraft-weight" placeholder="24000 - 32000" required>
                 </div>
 
@@ -40,17 +40,17 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="airport-elevation">Elevação do Aeroporto (ft):</label>
+                    <label for="airport-elevation">Airport Elevation (ft):</label>
                     <input type="number" id="airport-elevation" value="0" required>
                 </div>
-                
-                <button type="button" id="calculate-btn">Calcular Thrust Indication</button>
+
+                <button type="button" id="calculate-btn">Calculate Thrust Indication</button>
             </form>
 
             <div id="results-section">
-                <h3>Resultados do Procedimento:</h3>
+                <h3>Procedure Results:</h3>
                 <div class="result-output">
-                    <p>Resulting Thrust Indication para 6% Gradiente:</p>
+                    <p>Resulting Thrust Indication for 6% Climb Gradient:</p>
                     <span id="thrust-result">-</span>
                 </div>
             </div>
@@ -58,7 +58,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 - Desenvolvido para Pilotos | Todos os cálculos baseados em dados fornecidos.</p>
+        <p>Alan Fernandes - 2025</p>
     </footer>
 
     <script src="script.js"></script>
